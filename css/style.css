@@ -1,0 +1,295 @@
+/* Paleta de Colores Pasteles Modernos */
+:root {
+    --primary-light: #A7C7E7; /* Azul cielo claro */
+    --secondary-light: #C7DDE7; /* Azul grisáceo claro */
+    --accent-light: #E7C7A7;   /* Durazno suave */
+    --background-light: #F8F8F8; /* Gris muy claro, casi blanco */
+    --text-dark: #333333;
+    --text-light: #666666;
+    --border-color: #DDDDDD;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --button-primary: #85B4D4; /* Azul más vibrante */
+    --button-secondary: #B4D485; /* Verde suave */
+    --button-alert: #D48585;    /* Rojo suave */
+}
+
+/* Base Global */
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex; /* Para centrar contenido si es necesario */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupar toda la altura de la ventana */
+}
+
+/* Contenedor Principal de la Aplicación */
+.app-container {
+    width: 95%;
+    max-width: 1400px; /* Ancho máximo para pantallas grandes */
+    margin: 20px auto;
+    background-color: #FFFFFF;
+    border-radius: 18px; /* Bordes redondeados prominentes */
+    box-shadow: 0 10px 30px var(--shadow-light); /* Sombra suave */
+    overflow: hidden; /* Asegura que nada sobresalga */
+    display: flex; /* Para organizar los paneles internos */
+    flex-direction: column; /* Por defecto vertical */
+    min-height: 80vh; /* Altura mínima para que se vea como app */
+}
+
+/* Encabezado */
+.header {
+    background-color: var(--primary-light);
+    color: white;
+    padding: 25px 30px;
+    text-align: center;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.header p {
+    margin-top: 5px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Contenido Principal (que contendrá el mapa y controles) */
+.main-content {
+    display: flex;
+    flex-direction: row; /* Contenido y sidebar lado a lado */
+    flex-grow: 1; /* Ocupa el espacio restante */
+    padding: 20px;
+    gap: 20px; /* Espacio entre el mapa y el sidebar */
+}
+
+/* Panel del Mapa */
+.map-panel {
+    flex-grow: 1; /* Ocupa la mayor parte del espacio */
+    background-color: #eef7ff; /* Fondo muy claro para el panel del mapa */
+    border-radius: 12px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#map {
+    height: 100%; /* El mapa ocupará la altura restante del panel */
+    min-height: 400px; /* Altura mínima para asegurar visibilidad */
+    border-radius: 10px; /* Bordes redondeados para el mapa */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+/* Sidebar/Panel de Controles */
+.sidebar-panel {
+    flex-basis: 350px; /* Ancho fijo para el sidebar */
+    flex-shrink: 0; /* No se encogerá */
+    background-color: #f7e7ff; /* Otro color pastel suave */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.control-group {
+    background-color: #FFFFFF;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.control-group h3 {
+    margin-top: 0;
+    color: var(--primary-light);
+    font-size: 1.3em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.control-group select,
+.control-group input[type="text"],
+.control-group button {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Incluir padding y border en el ancho */
+}
+
+.control-group select:focus,
+.control-group input[type="text"]:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(167, 199, 231, 0.3);
+    outline: none;
+}
+
+/* Botones */
+.button {
+    display: block; /* Ocupa todo el ancho disponible */
+    padding: 14px 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button-primary {
+    background-color: var(--button-primary);
+}
+
+.button-primary:hover {
+    background-color: #6a9ac9; /* Un poco más oscuro */
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background-color: var(--button-secondary);
+}
+
+.button-secondary:hover {
+    background-color: #9ac96a;
+    transform: translateY(-2px);
+}
+
+.button-alert {
+    background-color: var(--button-alert);
+}
+
+.button-alert:hover {
+    background-color: #c96a6a;
+    transform: translateY(-2px);
+}
+
+/* Mensajes de Estado y Alerta */
+.status-message {
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.95em;
+    text-align: center;
+    border: 1px solid;
+    display: none; /* Oculto por defecto */
+}
+
+.status-message.info {
+    background-color: #e7f3ff;
+    border-color: #cce7ff;
+    color: #0056b3;
+}
+
+.status-message.success {
+    background-color: #e9ffe7;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.status-message.error {
+    background-color: #ffe7e7;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Pie de página (si decides añadir uno) */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: var(--text-light);
+    background-color: var(--secondary-light);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    margin-top: 20px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column; /* Apilar paneles en pantallas pequeñas */
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .sidebar-panel {
+        flex-basis: auto; /* Ya no tiene ancho fijo */
+        width: 100%; /* Ocupa todo el ancho */
+    }
+
+    .app-container {
+        margin: 10px auto;
+        border-radius: 12px;
+    }
+
+    .header {
+        padding: 20px 25px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .map-panel, .sidebar-panel, .control-group {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .control-group h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .control-group select,
+    .control-group input[type="text"],
+    .control-group button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .button {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Buses - Guayana</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIINfBG9zRchXfCoVrnTFkiGuXaTnzFJjOo="
+        crossorigin=""/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛠️ Administración de Buses Guayana</h1>
+        <p>Control de la flota de autobuses en tiempo real.</p>
+
+        <div class="controls">
+            <button id="start-tracking-btn">Iniciar Rastreo de Mi Ubicación</button>
+            <button id="stop-tracking-btn" style="background-color: #dc3545;">Detener Rastreo</button>
+            <p>Estado del Rastreo: <span id="tracking-status">Inactivo</span></p>
+        </div>
+
+        <div id="map"></div>
+        <div id="status-message">Conectando al panel de control...</div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nEFjBZzupdqJzD9mUfW9tLd9R8B6P/8T8L6Y9wNqc="
+        crossorigin=""></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="js/administracion.js"></script>
+</body>
+</html>
